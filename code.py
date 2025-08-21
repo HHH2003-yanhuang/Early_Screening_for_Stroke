@@ -6,12 +6,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+import optuna
+import lightgbm as lgb
 from xgboost import XGBClassifier
 from sklearn.ensemble import  RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
-
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import roc_curve, auc
 from sklearn.metrics import classification_report, confusion_matrix
@@ -1302,6 +1302,7 @@ prediction = int(proba >= threshold)
 # 8. 输出结果
 print(f"该患者的脑卒中风险概率为: {proba:.2%}")
 print(f"模型预测结果（是否脑卒中）: {'是' if prediction == 1 else '否'}")
+
 
 
 
